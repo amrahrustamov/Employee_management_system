@@ -8,5 +8,9 @@ namespace Employee_management_system.Controllers
         {
             return View();
         }
+        public IActionResult AddEmployee()
+        {
+            return View();
+        }
     }
 }
