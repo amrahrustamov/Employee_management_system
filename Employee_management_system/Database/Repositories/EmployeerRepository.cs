@@ -5,7 +5,7 @@ namespace Employee_management_system.Database.Repositories
 {
     public class EmployeerRepository
     {
-        ViewModel viewModel = new ViewModel();
+        public ViewModel viewModel = new ViewModel();
 
         public EmployeerRepository()
         {
@@ -14,6 +14,10 @@ namespace Employee_management_system.Database.Repositories
         public List<Employeers> GetEmployeers()
         {
             return viewModel.employeer.ToList();
+        }
+        public void Insert(Employeers employeer)
+        {
+            viewModel.employeer.Add(employeer);
         }
     }
 }

@@ -2,7 +2,9 @@
 {
     public class Employeers
     {
-        public Employeers(string name, string surname, string fatherName, string pINcode, string email, string photo, string departament, string employeerId)
+
+
+        public Employeers(string name, string surname, string fatherName, string pINcode, string email, string photo, string departament, string employeerCode, bool isDeleted)
         {
             Name = name;
             Surname = surname;
@@ -11,7 +13,8 @@
             Email = email;
             Photo = photo;
             Departament = departament;
-            EmployeerCode = employeerId;
+            EmployeerCode = employeerCode;
+            IsDeleted = isDeleted;
         }
 
         public string Name { get; set; }
