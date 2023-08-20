@@ -1,10 +1,14 @@
-﻿namespace Employee_management_system.Database.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Employee_management_system.Database.Models
 {
-    public class Employeers
+    [Table("Employeers")]
+    public class Employeer
     {
 
 
-        public Employeers(string name, string surname, string fatherName, string pINcode, string email, string photo, string departament, string employeerCode, bool isDeleted)
+        public Employeer(string name, string surname, string fatherName, string pINcode, string email, string photo, string departament, string employeerCode, bool isDeleted)
         {
             Name = name;
             Surname = surname;
@@ -17,6 +21,10 @@
             IsDeleted = isDeleted;
         }
 
+        
+        public Employeer() { }
+
+        [Key]
         public string Name { get; set; }
         public string Surname { get; set; }
         public string FatherName { get; set; }

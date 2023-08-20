@@ -6,8 +6,7 @@ namespace Employee_management_system.ViewModels
 {
     public class ViewModel
     {
-        public List<Employeers> employeer = new List<Employeers>();
-        public EmployeerRepository employeerRepository;
+        public List<Employeer> employeer = new List<Employeer>();
         public StringUtility stringUtility = new StringUtility();
     }
 }

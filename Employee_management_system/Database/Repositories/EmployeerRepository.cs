@@ -7,17 +7,20 @@ namespace Employee_management_system.Database.Repositories
     {
         public ViewModel viewModel = new ViewModel();
 
+        private EmployeerDbContext _dbContext;
+
         public EmployeerRepository()
         {
-
+            _dbContext = new EmployeerDbContext();
         }
-        public List<Employeers> GetEmployeers()
+        public List<Employeer> GetAll()
         {
-            return viewModel.employeer.ToList();
+            return _dbContext.Employeers.ToList();
         }
-        public void Insert(Employeers employeer)
+        public void Insert(Employeer employeer)
         {
-            viewModel.employeer.Add(employeer);
+            _dbContext.Employeers.Add(employeer);
+            _dbContext.SaveChanges();
         }
     }
 }

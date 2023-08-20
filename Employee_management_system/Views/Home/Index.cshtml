@@ -1,5 +1,6 @@
 ﻿@using Employee_management_system.ViewModels;
 @using Employee_management_system.Database.Models;
+@using Employee_management_system.Database.Repositories;
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -33,17 +34,18 @@
                         </tr>
                     </thead>
                     @{
-                        ViewModel viewModel = new ViewModel();
-                        foreach (Employeers employeer in viewModel.employeer)
+                        EmployeerRepository employeerRepository = new EmployeerRepository();
+                        var data = employeerRepository.GetAll();
+                        foreach (var item in data)
                         {
-                            if (!employeer.IsDeleted)
+                            if (!item.IsDeleted)
                             {
                                 <tbody>
                                     <tr>
-                                        <td>@employeer.EmployeerCode</td>
-                                        <td>@employeer.Name</td>
-                                        <td>@employeer.Surname</td>
-                                        <td>@employeer.FatherName</td>
+                                        <td>@item.EmployeerCode</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.Surname</td>
+                                        <td>@item.FatherName</td>
                                         <td>
                                             <a class="btn btn-danger">Delete</a>
                                             <a class="btn btn-primary">Edit</a>
