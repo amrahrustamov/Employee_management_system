@@ -22,5 +22,11 @@ namespace Employee_management_system.Database.Repositories
             _dbContext.Employeers.Add(employeer);
             _dbContext.SaveChanges();
         }
+        public Employeer GetByEmployeerCode(string EmployeerCode)
+        {
+            var employeer = _dbContext.Employeers.FirstOrDefault(p => p.EmployeerCode == EmployeerCode);
+            return employeer;
+        }
+
     }
 }

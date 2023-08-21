@@ -48,7 +48,7 @@
                                         <td>@item.FatherName</td>
                                         <td>
                                             <a class="btn btn-danger">Delete</a>
-                                            <a class="btn btn-primary">Edit</a>
+                                            <a class="btn btn-primary" asp-controller="Home" asp-action="EditEmployee" asp-route-id="@item.EmployeerCode">Edit</a>
                                         </td>
                                     </tr>
                                 </tbody>
